@@ -1,10 +1,15 @@
 export default function TypesOfSolution(){
     return (
         <>
-            <select>
-                    <option value="someOption">Some option</option>
-                    <option value="otherOption">Other option</option>
+
+            <div id="div-select">
+            <p>Type of the Solution{" "}</p>
+            <select id="select-type">
+                    <option value="WriteCodeHere">Write Code Here</option>
+                    <option value="UploadFile">Upload File</option>
             </select>
+            
+            </div>
 
 
         </>
