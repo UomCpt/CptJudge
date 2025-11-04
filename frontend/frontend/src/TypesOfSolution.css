@@ -1,0 +1,37 @@
+#body-types-of-solution{
+     position: relative;
+
+    width: 90vw;   
+    height: 90vh;  
+    transform: translate(-5%, -5%);
+  
+
+}
+
+#div-select {
+    position: absolute;       
+    top: 15px;             
+    left: 50%;            
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;     
+    gap: 7px; 
+
+}
+
+#p-type{
+    margin: 0;
+
+
+}
+
+#select-type{
+  height: 25px;
+}
+
+
+
+
+
+
