@@ -1,60 +1,43 @@
 import React, { useState } from "react";
 import "./ProblemsCategories.css";
 
-const ProblemsCategories = () => {
-  // Κατάσταση φίλτρου (all, solved, unsolved)
-  const [filter, setFilter] = useState("all");
+const ProblemsCategories = ({ onFilterChange }) => {
+  // κρατάμε ποιο φίλτρο είναι ενεργό
+  const [activeCategory, setActiveCategory] = useState("all");
 
-  // Παραδείγματα προβλημάτων
-  const problems = [
-    { id: 1, title: "Problem 1 Solved", status: "solved" },
-    { id: 2, title: "Problem 2 Unsolved", status: "unsolved" },
-    { id: 3, title: "Problem 3 Solved", status: "solved" },
-    { id: 4, title: "Problem 4 Unsolved", status: "unsolved" },
-  ];
-
-  // Εφαρμόζουμε φίλτρο
-  const filtered = problems.filter((p) =>
-    filter === "all" ? true : p.status === filter
-  );
+  // όταν πατάει ο χρήστης ένα κουμπί/κάρτα
+  const handleCategoryClick = (category) => {
+    setActiveCategory(category);
+    if (onFilterChange) {
+      onFilterChange(category);
+    }
+  };
 
   return (
-    <div className="problems-page">
-      {/* Τίτλος */}
-      <h1 className="title">Problems</h1>
-
-      {/* Κάρτες φίλτρων */}
-      <div className="card-container">
-        <div
-          onClick={() => setFilter("all")}
-          className={`card ${filter === "all" ? "active" : ""}`}
-        >
-          All Problems
-        </div>
-        <div
-          onClick={() => setFilter("solved")}
-          className={`card ${filter === "solved" ? "active" : ""}`}
-        >
-          Solved Problems
-        </div>
-        <div
-          onClick={() => setFilter("unsolved")}
-          className={`card ${filter === "unsolved" ? "active" : ""}`}
-        >
-          Unsolved Problems
-        </div>
+    // wrapper για τις κάρτες φίλτρων
+    <div className="card-container">
+      {/* Κάρτα για "All Problems" */}
+      <div
+        className={`card ${activeCategory === "all" ? "active" : ""}`}
+        onClick={() => handleCategoryClick("all")}
+      >
+        All Problems
       </div>
 
-      {/* Λίστα προβλημάτων */}
-      <div className="problem-list">
-        {filtered.map((p) => (
-          <div
-            key={p.id}
-            className={`problem ${p.status === "solved" ? "solved" : "unsolved"}`}
-          >
-            {p.title}
-          </div>
-        ))}
+      {/* Κάρτα για "Solved Problems" */}
+      <div
+        className={`card ${activeCategory === "solved" ? "active" : ""}`}
+        onClick={() => handleCategoryClick("solved")}
+      >
+        Solved Problems
+      </div>
+
+      {/* Κάρτα για "Unsolved Problems" */}
+      <div
+        className={`card ${activeCategory === "unsolved" ? "active" : ""}`}
+        onClick={() => handleCategoryClick("unsolved")}
+      >
+        Unsolved Problems
       </div>
     </div>
   );
