@@ -1,4 +1,3 @@
-
 import ProblemsCategories from './ProblemsCategories'
 import './App.css'
 
@@ -11,4 +10,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
