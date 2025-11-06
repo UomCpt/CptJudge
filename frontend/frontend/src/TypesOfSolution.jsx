@@ -18,7 +18,7 @@ export default function TypesOfSolution() {
   
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
-    setUploaded(false);
+ 
   };
 
   const handleUpload = () => {
@@ -44,9 +44,10 @@ export default function TypesOfSolution() {
         {selected=="UploadFile" && 
 
          <div id="file-uploader">
-        <input type="file" onChange={handleFileChange} />
-        {file && <p>Επιλεγμένο αρχείο: {file.name}</p>}
-        {!uploaded && <button onClick={handleUpload}>Upload</button>}
+        {!uploaded &&<input type="file" onChange={handleFileChange} />}
+        { !uploaded&& file && <p>Selected File: {file.name}</p>}
+        {!uploaded && <button onClick={handleUpload}>Submit</button>}
+        {uploaded && <p>🟢 You have succesfully uploaded the file: {file.name}</p>}
       </div>}
     </div>
   );
