@@ -6,6 +6,9 @@ export default function TypesOfSolution() {
 
   const [selected, setSelected] = useState("WriteCodeHere");
 
+  const [uploaded, setUploaded] = useState(false);
+ 
+
   
   const handleSelect = (event)=>{
     setSelected(event.target.value);
@@ -15,11 +18,14 @@ export default function TypesOfSolution() {
   
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
+    setUploaded(false);
   };
 
   const handleUpload = () => {
     if (!file) return;
     console.log("Ανεβάζουμε:", file);
+    setUploaded(true);
+    
   };
 
 
@@ -40,7 +46,7 @@ export default function TypesOfSolution() {
          <div id="file-uploader">
         <input type="file" onChange={handleFileChange} />
         {file && <p>Επιλεγμένο αρχείο: {file.name}</p>}
-        <button onClick={handleUpload}>Upload</button>
+        {!uploaded && <button onClick={handleUpload}>Upload</button>}
       </div>}
     </div>
   );
