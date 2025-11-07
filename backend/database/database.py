@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 # import time
 #from .config import settings
 
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:{Your_own_password}@localhost:5432/{Your own name}"
+SQLALCHEMY_DATABASE_URL = "postgresql://postgres:{Your password}@localhost:5432/{Local Database name}"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL) 
 

@@ -3,7 +3,8 @@ from datetime import datetime
     
 class Team(BaseModel):
     id: int
-    username: EmailStr
+    username: str
+    email: EmailStr
     password: str
     score: int
     attempted: int
@@ -11,6 +12,7 @@ class Team(BaseModel):
     
 class Problem(BaseModel):
     id: int
+    name: str
     description: set
     
 class Submission(BaseModel):

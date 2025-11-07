@@ -7,8 +7,8 @@ class Team(Base):
     __tablename__ = "teams"
     
     id = Column(Integer, primary_key = True, nullable = False)
-    # name = Column(String,nullable=False)
-    username = Column(String, nullable = False)
+    username = Column(String,nullable=False)
+    email = Column(String, nullable = False)
     password = Column(String,nullable=False)
     score = Column(Integer,nullable=False)
     attempted = Column(Integer,nullable=False)
@@ -19,7 +19,7 @@ class Problem(Base):
     __tablename__ = "problems"
     
     id = Column(Integer, primary_key = True, nullable = False)
-    # name = Column(String,nullable=False)
+    name = Column(String,nullable=False)
     description = Column(String,nullable=False)
     
 class Submission(Base):
