@@ -19,8 +19,6 @@ class Submission(BaseModel):
     id: int
     created_at: datetime
     team_id: int
-    
-class Solved(BaseModel):
-    id: int
-    created_at: datetime
-    team_id: int
+    solved: bool
+    problem_id: int
+    average_time: int
