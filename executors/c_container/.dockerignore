@@ -1,0 +1,21 @@
+# Ignore version control directories
+.git
+.gitignore
+
+# Ignore Python cache and environment folders
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+env/
+venv/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
