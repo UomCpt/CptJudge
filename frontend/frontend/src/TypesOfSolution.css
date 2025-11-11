@@ -95,7 +95,7 @@
     height: 100%;            
    
    
-    padding: 20px;
+    
    
     overflow-y: auto;
     box-sizing: border-box;
@@ -108,7 +108,7 @@
     font-family: "Fira Code", monospace;
     font-size: 1rem;
     border-radius: 10px;
-    padding: 15px;
+    
 
     margin-top: 20px;
     border: 1px solid #ccc;
@@ -122,6 +122,11 @@
 }
 
 #submit-text{
-    justify-self: end;
+    background-color: rgb(37, 247, 54);
+
+}
+
+#submit-text:hover{
+    background-color: rgb(141, 254, 150);
 
 }
