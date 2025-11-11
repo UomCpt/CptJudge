@@ -41,10 +41,17 @@ export default function TypesOfSolution() {
         </select>
       </div>
 
+
+
         {selected=="WriteCodeHere"&& 
-        <div id="page-editor" className="center"> 
+        <div id="editorContainer" >
+          <div id="description"> 
           <p>ksdaskldaklsndfnf lngjrfgnjng jn  gkmjrtkhkrthn </p>
-          <input type="text" />
+          
+          </div>
+          
+          <textarea id="code-editor" />
+
           
 
           
