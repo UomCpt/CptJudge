@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <TypesOfSolution />
+      <TypesOfSolution description="Επεξήγηση" />
     </>
   )
 }

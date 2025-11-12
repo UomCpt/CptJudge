@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import './TypesOfSolution.css';
 
-export default function TypesOfSolution() {
+export default function TypesOfSolution({description}) {
   const [file, setFile] = useState(null);
 
   const [selected, setSelected] = useState("WriteCodeHere");
 
   const [uploaded, setUploaded] = useState(false);
- 
 
+  const [codeText, setCodeText] = useState("");
+
+  const [submited, setSubmited] = useState(false);
+ 
+  
   
   const handleSelect = (event)=>{
     setSelected(event.target.value);
@@ -28,6 +32,21 @@ export default function TypesOfSolution() {
     
   };
 
+  const handleSubmit= () =>{
+    console.log(codeText);
+    setSubmited(true);
+
+
+  };
+
+  const handlechangeCode= (event) =>{
+    setCodeText(event.target.value);
+    
+
+
+
+  };
+
 
 
   return (
@@ -43,17 +62,17 @@ export default function TypesOfSolution() {
 
 
 
-        {selected=="WriteCodeHere"&& 
+        {selected=="WriteCodeHere"&& !submited && 
         <div id="editorContainer" >
           <div id="description-div">
 
            <p>Problem Explanation</p>  
-          <p id="description">kpk</p> 
-          <button id="submit-text">Submit your code</button></div>
+          <p id="description">{description}</p> 
+          <button id="submit-text" onClick={handleSubmit}>Submit your code</button></div>
           
           
           
-          <textarea id="code-editor" />
+          <textarea id="code-editor" onChange={handlechangeCode} />
 
           
 
@@ -66,6 +85,15 @@ export default function TypesOfSolution() {
         
 
         }
+
+        {selected=="WriteCodeHere" && submited &&
+        <div className="center">
+          <p>🟢 You have succesfully submited your code</p>
+         
+        </div>
+        
+        }  
+
         
         
         
