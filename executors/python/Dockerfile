@@ -9,7 +9,7 @@ WORKDIR /app
 COPY CptJudge/executors/python/python_executor.py /app/python_executor.py
 
 # 4. Define Entrypoint
-ENTRYPOINT ["python", "python_executor.py"]
+ENTRYPOINT ["python", "python_executor.py"] 
 
 # # 5. Default Command
 # CMD ["Usage: Pass test_number as argument."]

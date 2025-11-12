@@ -6,7 +6,7 @@ import os
 # --- Configuration (Set by the main application logic) ---
 TARGET_SCRIPT_FILENAME = "user_program.txt"
 INPUT_FILENAME = "input.txt"  
-EXPECTED_FILENAME = "expected.txt" 
+EXPECTED_FILENAME = "expected.txt"  
 
 def execute_and_test(test_number: int) -> tuple[bool, str]:
    
