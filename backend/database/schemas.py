@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr, conint
+from pydantic import BaseModel, EmailStr, Field, conint
 from datetime import datetime
     
 class Team(BaseModel):
@@ -22,3 +22,17 @@ class Submission(BaseModel):
     solved: bool
     problem_id: int
     average_time: int
+    
+class ProblemBase(BaseModel):
+    id: int
+    name: str
+    description: str 
+    
+    class Config:
+        from_attributes = True 
+
+class ProblemStatus(ProblemBase):
+    status: str = Field(..., description="Solved, Attempted, or Not Attempted")
+
+    # Inherits Config from ProblemBase, ensuring ORM compatibility.
+    pass
