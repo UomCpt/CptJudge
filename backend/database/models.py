@@ -30,7 +30,7 @@ class Submission(Base):
     solved = Column(Boolean, nullable = False)
     problem_id = Column(Integer, ForeignKey("problems.id", ondelete="CASCADE"), nullable = False)
     average_time = Column(Integer, nullable = False)
-    
+    passed_test_cases = Column(Integer, nullable = False)
 
 
     

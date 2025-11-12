@@ -22,3 +22,4 @@ class Submission(BaseModel):
     solved: bool
     problem_id: int
     average_time: int
+    passed_test_cases: int
